@@ -1,0 +1,28 @@
+.button-home__homepage-btn {
+  width: 10vw;
+  height: 5vh;
+  margin: 5px;
+  border-radius: 3%;
+  border-right: 2px solid #623b3c;
+  border-bottom: 2px solid #623b3c;
+  border-top: none;
+  border-left: none;
+  /* border-top-left-radius: 5px; */
+
+  background-color: #af8d82;
+
+  color: #fff;
+  font-size: 20px;
+
+}
+
+
+.button-home__homepage-btn:hover{
+    /* border-color: #FF007C; */
+    background-color:#FF007C;
+
+
+    -webkit-box-shadow: 0px 10px 145px -37px rgba(255,0,124,1);
+-moz-box-shadow: 0px 10px 145px -37px rgba(255,0,124,1);
+box-shadow: 0px 10px 145px -37px rgba(255,0,124,1);
+}
