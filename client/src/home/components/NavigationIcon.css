@@ -1,0 +1,37 @@
+.navigationIcon__container {
+  border: 2px dotted green;
+  position: relative;
+
+}
+
+
+.navigationIcon__bar{
+  width: 2vw;
+  height: 2px;
+  background-color: #623b3c;
+  margin: 10px;
+  display: block;
+}
+
+.navigationIcon__container:active .navigationIcon__bar-two{
+  display: none;
+}
+
+.navigationIcon__container:active .navigationIcon__bar-one{
+  transform: rotate(45deg);
+  /* margin: auto; */
+  left:0;
+  right:0;
+  position: absolute;
+
+}
+
+.navigationIcon__container:active .navigationIcon__bar-three{
+  transform: rotate(-45deg);
+  /* margin: auto; */
+  left:0;
+  right:0;
+  position: absolute;
+
+
+}
