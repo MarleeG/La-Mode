@@ -15,12 +15,12 @@ const Home = () => {
           <div className="home__user-navigation-options-button-wrapper">
             <Button
               text="Sign up"
-              classes="button-home__homepage-btn font-ghotel"
+              classes="button-home__homepage-btn button-home__sign-up font-ghotel"
               // hover="animate__animated animate__pulse"
             />
             <Button
               text="Sign in"
-              classes="button-home__homepage-btn font-ghotel"
+              classes="button-home__homepage-btn button-home__sign-in font-ghotel"
               // hover="animate__animated animate__pulse"
             />
           </div>

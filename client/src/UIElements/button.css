@@ -3,30 +3,20 @@
   height: 6vh;
   margin: 5px;
   border-radius: 6%;
-  /* border-right: 2px solid #623b3c; */
   border-bottom: 4px solid #623b3c;
   border-top: none;
   border-left: none;
-  border-right:none;
-
+  border-right: none;
   background-color: #af8d82;
-
   color: #fff;
   font-size: 20px;
   font-weight: 700;
-
 }
 
-.button-home__homepage-btn:hover {
-  /* background-color: #ff007c; */
-}
-
-.button-home__homepage-btn:active {
-  box-shadow: 0px 0px 1px rgba(98,59,60,1); 
-  /*Reduce Shadow*/
+.button-home__sign-up:active, .button-home__sign-in:active {
   -ms-transform: translateY(2px);
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
 
-  border-bottom: none;
 }
+
