@@ -36,7 +36,6 @@ const thirdBarStyle = {
     marginTop: "15px",
     marginBottom: "15px",
     transitionDuration: "0.5s",
-
     // -webkit-transition-duration: 0.5s;
     // -moz-transition-duration: 0.5s;
     // -o-transition-duration: 0.5s;
