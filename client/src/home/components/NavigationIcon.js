@@ -8,6 +8,7 @@ const initialStyle = {
   backgroundColor: "#623b3c",
   margin: "10px",
   display: "block",
+  transition: "visibility 0s, opacity 0.5s linear"
 };
 
 const firstBarStyle = {
@@ -20,9 +21,6 @@ const firstBarStyle = {
     marginTop: "15px",
     marginBottom: "15px",
     transitionDuration: "0.5s",
-    //   -webkit-transition-duration: 0.5s;
-    //   -moz-transition-duration: 0.5s;
-    //   -o-transition-duration: 0.5s;
   },
 };
 
@@ -36,9 +34,6 @@ const thirdBarStyle = {
     marginTop: "15px",
     marginBottom: "15px",
     transitionDuration: "0.5s",
-    // -webkit-transition-duration: 0.5s;
-    // -moz-transition-duration: 0.5s;
-    // -o-transition-duration: 0.5s;
   },
 };
 
@@ -50,21 +45,34 @@ const secondBarStyle = {
 
 const NavigationIcon = (props) => {
   const [currentBarStyles, updateCurrentBarStyles] = useState({
-    // middle: middleSpanStyle.initial,
-    // others: otherSpanStyle.initial,
-
-    one: { initialStyle },
-    two: { initialStyle },
-    three: { initialStyle },
+    one: initialStyle,
+    two: initialStyle,
+    three: initialStyle,
   });
+  const [barStyleStatus, updateBarStyleStatus] = useState("initial");
 
   const handleStyleChange = () => {
-    updateCurrentBarStyles({
-      ...currentBarStyles,
-      one: firstBarStyle.active,
-      two: secondBarStyle.active,
-      three: thirdBarStyle.active,
-    });
+    if (barStyleStatus === "initial") {
+      updateCurrentBarStyles({
+        ...currentBarStyles,
+        one: firstBarStyle.active,
+        two: secondBarStyle.active,
+        three: thirdBarStyle.active,
+      });
+
+      updateBarStyleStatus("active");
+    } else {
+      updateCurrentBarStyles({
+        ...currentBarStyles,
+        one: initialStyle,
+        two: initialStyle,
+        three: initialStyle,
+      });
+
+      updateBarStyleStatus("initial");
+
+
+    }
   };
 
   return (
