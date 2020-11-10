@@ -70,8 +70,6 @@ const NavigationIcon = (props) => {
       });
 
       updateBarStyleStatus("initial");
-
-
     }
   };
 
