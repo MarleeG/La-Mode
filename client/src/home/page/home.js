@@ -7,7 +7,6 @@ const Home = () => {
   return (
     <div className="home__container center">
       <div className="home__wrapper">
-        {/* <p className="" style={{display: "inline"}}>In Fashion</p> */}
 
         <div className="home__user-navigation-options">
           <NavigationIcon />
