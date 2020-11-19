@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./home.css";
 import Button from "../../UIElements/button";
 import NavigationIcon from "../components/NavigationIcon";
+import Navigation from "../components/Navigation";
 const Home = () => {
+  const [showNav, handleShowNav] = useState(false);
   return (
     <div className="home__container center">
       <div className="home__wrapper">
+        {showNav && <Navigation />}
 
-        <div className="home__user-navigation-options">
-          <NavigationIcon />
+        <div  className="home__user-navigation-options">
+          {/* <div className="home__nav">
+          </div> */}
+
+          <NavigationIcon handleShowNav={handleShowNav} />
 
           <div className="home__user-navigation-options-button-wrapper">
             <Button

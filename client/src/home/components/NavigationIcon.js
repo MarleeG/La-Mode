@@ -8,7 +8,9 @@ const initialStyle = {
   backgroundColor: "#623b3c",
   borderRadius: "4px",
   margin: "auto",
-  transition: ".09s",
+  // transition: ".09s",
+  transition: ".8s",
+
   transitionProperty: "height",
 };
 
@@ -18,6 +20,9 @@ const barStyles = {
     ...initialStyle,
     position: "absolute",
     height: "20px",
+    left: '20vw', 
+  transition: ".1s",
+
   },
 };
 
@@ -33,9 +38,13 @@ const NavigationIcon = (props) => {
       updateCurrentBarStyles(barStyles.active);
 
       updateBarStyleStatus("active");
+
+      props.handleShowNav(true);
     } else if (barStyleStatus === "active") {
       updateCurrentBarStyles(barStyles.initial);
       updateBarStyleStatus("initial");
+
+      props.handleShowNav(false);
     }
   };
 
