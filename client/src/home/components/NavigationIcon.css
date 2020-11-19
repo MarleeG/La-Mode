@@ -1,6 +1,7 @@
 .navigationIcon__container {
   /* border: 2px dotted green; */
 
+  margin: 10px;
   display: flex;
   justify-content: center;
   flex-direction: column;
