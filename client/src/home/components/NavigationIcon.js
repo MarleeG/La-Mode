@@ -8,10 +8,7 @@ const initialStyle = {
   backgroundColor: "#623b3c",
   borderRadius: "4px",
   margin: "auto",
-  // transition: ".09s",
-  transition: ".8s",
-
-  transitionProperty: "height",
+  transition: "height .8s",
 };
 
 const barStyles = {
@@ -20,9 +17,10 @@ const barStyles = {
     ...initialStyle,
     position: "absolute",
     height: "20px",
-    left: '20vw', 
-  transition: ".1s",
+    left: "20vw",
+    transition: "height .1s",
 
+    animation: "slowLeft .4s",
   },
 };
 

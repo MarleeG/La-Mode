@@ -3,13 +3,13 @@ import React, { useState } from "react";
 import "./home.css";
 import Button from "../../UIElements/button";
 import NavigationIcon from "../components/NavigationIcon";
-import Navigation from "../components/Navigation";
+import SideDrawer from "../components/SideDrawer";
 const Home = () => {
   const [showNav, handleShowNav] = useState(false);
   return (
     <div className="home__container center">
       <div className="home__wrapper">
-        {showNav && <Navigation />}
+        {showNav && <SideDrawer />}
 
         <div  className="home__user-navigation-options">
           {/* <div className="home__nav">
