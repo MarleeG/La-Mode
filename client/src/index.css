@@ -16,14 +16,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color:  #f8f8f8 ;
 }
 
 
 .center {
   margin: auto;
-  /* display: flex; */
-  /* justify-self: center; */
-  /* align-self: center; */
   text-align: center;
 
   top:0;
