@@ -6,16 +6,27 @@ import NavigationIcon from "../components/NavigationIcon";
 import SideDrawer from "../components/SideDrawer";
 const Home = () => {
   const [showNav, handleShowNav] = useState(false);
+  const [openNavClickedOnce, updateOpenNavClickedOnce] = useState(false);
   return (
     <div className="home__container center">
       <div className="home__wrapper">
-        {showNav && <SideDrawer />}
+        {
+          <SideDrawer
+            showNav={showNav}
+            openNavClickedOnce={openNavClickedOnce}
+          />
+        }
 
-        <div  className="home__user-navigation-options">
+        <div className="home__user-navigation-options">
           {/* <div className="home__nav">
           </div> */}
 
-          <NavigationIcon handleShowNav={handleShowNav} />
+          <NavigationIcon
+            handleShowNav={handleShowNav}
+            updateOpenNavClickedOnce={updateOpenNavClickedOnce}
+
+            openNavClickedOnce={openNavClickedOnce}
+          />
 
           <div className="home__user-navigation-options-button-wrapper">
             <Button

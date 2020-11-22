@@ -17,8 +17,17 @@
 
 
 
-@keyframes slowLeft {
+@keyframes moveLeft {
     from {left: 0;}
     to {left: 20vw;}
 }
+
+@keyframes moveRight {
+  from {left: 20vw;}
+  to {left: 0;}
+}
+
+
+
+
 
