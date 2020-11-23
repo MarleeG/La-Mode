@@ -54,7 +54,6 @@ const NavigationIcon = (props) => {
         // animation: "moveRight .6s" 
       });
 
-
       // updateCurrentBarStyles({
       //   ...barStyles.initial,
       //   animation: "moveRight .6s",
