@@ -13,13 +13,18 @@ const initialStyle = {
 
 const barStyles = {
   initial: initialStyle,
+  intialActive: {
+    ...initialStyle,
+    height: "10px",
+    transition: "height .8s",
+    animation: "moveRight .6s",
+  },
   active: {
     ...initialStyle,
     position: "absolute",
-    height: "20px",
     left: "20vw",
+    height: "20px",
     transition: "height .1s",
-
     animation: "moveLeft .4s",
   },
 };
@@ -45,26 +50,14 @@ const NavigationIcon = (props) => {
       log("initial ->  active");
 
       log(currentBarStyles);
-    } 
-    
-    else if (barStyleStatus === "active") {
+    } else if (barStyleStatus === "active") {
+      log("active => initial");
 
-      updateCurrentBarStyles({
-        ...barStyles.initial,
-        // animation: "moveRight .6s" 
-      });
+      updateCurrentBarStyles(barStyles.intialActive);
 
-      // updateCurrentBarStyles({
-      //   ...barStyles.initial,
-      //   animation: "moveRight .6s",
-      // });
       updateBarStyleStatus("initial");
 
-      log("active -> initial");
       log(currentBarStyles);
-
-      // ,
-
       // this will update if the nav should be shown
       props.handleShowNav(false);
     }
@@ -72,32 +65,12 @@ const NavigationIcon = (props) => {
 
   useEffect(() => {
 
-    log(currentBarStyles);
-
     if (openNavClickedOnce && barStyleStatus === "initial") {
+      log("INITIAL");
 
-
-
-
-      // updateCurrentBarStyles({
-      //   ...currentBarStyles,
-      //   // animation: "moveRight .6s",
-      //   left: "0",
-      //   margin: '10px', 
-      //   transition: "height .8s",
-      // });
-
-    } else if(barStyleStatus === "active"){
+    } else if (barStyleStatus === "active") {
     }
 
-
-
-    // else {
-    //   updateCurrentBarStyles({
-    //     ...barStyles.initial
-    //   });
-
-    // }
   }, [openNavClickedOnce, barStyleStatus]);
 
   return (
