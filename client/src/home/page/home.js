@@ -4,18 +4,17 @@ import "./home.css";
 import Button from "../../UIElements/button";
 import NavigationIcon from "../components/NavigationIcon";
 import SideDrawer from "../components/SideDrawer";
+
 const Home = () => {
   const [showNav, handleShowNav] = useState(false);
   const [openNavClickedOnce, updateOpenNavClickedOnce] = useState(false);
   return (
     <div className="home__container center">
       <div className="home__wrapper">
-        {
           <SideDrawer
             showNav={showNav}
             openNavClickedOnce={openNavClickedOnce}
           />
-        }
 
         <div className="home__user-navigation-options">
           {/* <div className="home__nav">
@@ -24,7 +23,6 @@ const Home = () => {
           <NavigationIcon
             handleShowNav={handleShowNav}
             updateOpenNavClickedOnce={updateOpenNavClickedOnce}
-
             openNavClickedOnce={openNavClickedOnce}
           />
 
