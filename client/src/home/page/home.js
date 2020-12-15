@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./home.css";
 import Button from "../../UIElements/button";
@@ -11,10 +12,7 @@ const Home = () => {
   return (
     <div className="home__container center">
       <div className="home__wrapper">
-          <SideDrawer
-            showNav={showNav}
-            openNavClickedOnce={openNavClickedOnce}
-          />
+        <SideDrawer showNav={showNav} openNavClickedOnce={openNavClickedOnce} />
 
         <div className="home__user-navigation-options">
           {/* <div className="home__nav">
@@ -27,16 +25,21 @@ const Home = () => {
           />
 
           <div className="home__user-navigation-options-button-wrapper">
-            <Button
-              text="Sign up"
-              classes="button-home__homepage-btn button-home__sign-up font-ghotel"
-              // hover="animate__animated animate__pulse"
-            />
-            <Button
-              text="Sign in"
-              classes="button-home__homepage-btn button-home__sign-in font-ghotel"
-              // hover="animate__animated animate__pulse"
-            />
+            <Link to="/auth">
+              <Button
+                text="Sign up"
+                classes="button-home__homepage-btn button-home__sign-up font-ghotel"
+                // hover="animate__animated animate__pulse"
+              />
+            </Link>
+
+            <Link to="/auth">
+              <Button
+                text="Sign in"
+                classes="button-home__homepage-btn button-home__sign-in font-ghotel"
+                // hover="animate__animated animate__pulse"
+              />
+            </Link>
           </div>
         </div>
 
