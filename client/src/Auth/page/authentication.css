@@ -1,0 +1,24 @@
+.auth_container {
+  /* border: 2px dotted blueviolet; */
+  width: 95vw;
+  height: 95vh;
+
+  background: rgb(211, 171, 158);
+  background-image: linear-gradient(
+    308deg,
+    rgba(211, 171, 158, 0.47240894648875176) 12%,
+    rgba(211, 171, 158, 0.47) 31%,
+    rgba(234, 201, 193, 0.47) 60%,
+    rgba(254, 254, 255, 0.47) 84%
+  );
+
+  border-radius: 5px;
+
+  -webkit-box-shadow: 15px 26px 36px -14px rgba(175, 141, 130, 1);
+  -moz-box-shadow: 15px 26px 36px -14px rgba(175, 141, 130, 1);
+  box-shadow: 15px 26px 36px -14px rgba(175, 141, 130, 1);
+}
+
+h2.auth__header{
+    font-size: 40px;
+}
