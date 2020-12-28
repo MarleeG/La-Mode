@@ -1,13 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../UIElements/button";
 import Input from "../../UIElements/Input";
 
 import "./authentication-widget.css";
+const log = console.log;
 const AuthenticationWidget = (props) => {
+  const [username, updateUsername] = useState("");
+  const [passwordSignIn, updatePasswordSignIn] = useState("");
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-  }
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    log(`name: ${name}\n value: ${value}`);
+
+    switch (name) {
+      case "input_username":
+        updateUsername(value);
+        break;
+
+      case "input_password-sign-in":
+        updatePasswordSignIn(value);
+        break;
+
+      default:
+        alert(`input ${name} not available`);
+    }
+    // [name](value)
+  };
   return (
     <div className="AW-container center">
       <h3>
@@ -17,15 +40,19 @@ const AuthenticationWidget = (props) => {
       <form onSubmit={handleSubmit}>
         <Input
           type="text"
-          type="username"
-          value=""
+          value={username}
+          name="input_username"
+          // name="updateUsername"
           placeholder="user@email.com"
+          handleInputChange={handleInputChange}
         />
 
         <Input
           type="password"
-          value=""
+          value={passwordSignIn}
+          name="input_password-sign-in"
           placeholder="·········"
+          handleInputChange={handleInputChange}
         />
 
         <Button
@@ -36,7 +63,6 @@ const AuthenticationWidget = (props) => {
           type="submit"
         />
       </form>
-      
     </div>
   );
 };
