@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Button from "../../UIElements/button";
 import Input from "../../UIElements/Input";
 
@@ -11,12 +11,12 @@ const authWidgetTypeStyles = {
     textDecoration: "underline",
     // font-family: 'Grand Hotel', cursive;
     fontFamily: "Grand Hotel, cursive",
-    fontSize: '33px', 
-    wordSpacing: '0px'
+    fontSize: "33px",
+    wordSpacing: "0px",
   },
   inactive: {
     color: "grey",
-    wordSpacing: '0px'
+    wordSpacing: "0px",
   },
 };
 
@@ -31,8 +31,10 @@ const AuthenticationWidget = (props) => {
     authWidgetTypeStyles.inactive
   );
 
+  // inputs
   const [username, updateUsername] = useState("");
-  const [passwordSignIn, updatePasswordSignIn] = useState("");
+  const [passwordInputOne, updatePasswordInputOne] = useState("");
+  const [passwordSignUpTwo, updatePasswordSignUpTwo] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,8 +50,12 @@ const AuthenticationWidget = (props) => {
         updateUsername(value);
         break;
 
-      case "input_password-sign-in":
-        updatePasswordSignIn(value);
+      case "input_password-one":
+        updatePasswordInputOne(value);
+        break;
+
+      case "input_password-two":
+        updatePasswordSignUpTwo(value);
         break;
 
       default:
@@ -69,14 +75,55 @@ const AuthenticationWidget = (props) => {
     updateAuthWidgetType(type);
   };
 
-  useEffect(() => {}, []);
+  const handleAuthTypeHoverStyle = (hover, e) => {
+    const {innerHTML} = e.target;
+    if (hover === "enter") {
+      if (
+        authWidgetType === "sign-in" && innerHTML === 'Sign up'
+
+      ) {
+        updateAuthWidgetSignUpStyle({
+          ...authWidgetSignUpStyle,
+          textDecoration: "underline",
+        });
+      } 
+      
+      else if (
+        authWidgetType === "sign-up" &&
+        innerHTML === 'Sign in'
+      ) {
+        updateAuthWidgetSignInStyle({
+          ...authWidgetSignInStyle,
+          textDecoration: "underline",
+        });
+      }
+
+    } else {
+      if (
+        authWidgetType === "sign-in"
+      ) {
+        updateAuthWidgetSignUpStyle(authWidgetTypeStyles.inactive);
+      } else if (
+        authWidgetType === "sign-up"
+      ) {
+        updateAuthWidgetSignInStyle(authWidgetTypeStyles.inactive);
+      }
+    }
+  };
+
+  useEffect(() => {
+    log("authWidgetSignInStyle ", authWidgetSignInStyle);
+    log("authWidgetSignUpStyle ", authWidgetSignUpStyle);
+  }, [authWidgetSignUpStyle, authWidgetSignInStyle]);
 
   return (
     <div className="AW-container center">
-      <h3 style={{ color: "#c9c8c7" , wordSpacing: '3px'}}>
+      <h3 style={{ color: "#c9c8c7", wordSpacing: "3px" }}>
         <span
           style={authWidgetSignInStyle}
           onClick={() => handleAuthWidgetType("sign-in")}
+          onMouseEnter={(e) => handleAuthTypeHoverStyle("enter", e)}
+          onMouseLeave={(e) => handleAuthTypeHoverStyle("leave", e)}
         >
           Sign in
         </span>{" "}
@@ -84,6 +131,8 @@ const AuthenticationWidget = (props) => {
         <span
           style={authWidgetSignUpStyle}
           onClick={() => handleAuthWidgetType("sign-up")}
+          onMouseEnter={(e) => handleAuthTypeHoverStyle("enter", e)}
+          onMouseLeave={(e) => handleAuthTypeHoverStyle("leave", e)}
         >
           Sign up
         </span>
@@ -94,18 +143,27 @@ const AuthenticationWidget = (props) => {
           type="text"
           value={username}
           name="input_username"
-          // name="updateUsername"
           placeholder="user@email.com"
           handleInputChange={handleInputChange}
         />
 
         <Input
           type="password"
-          value={passwordSignIn}
-          name="input_password-sign-in"
+          value={passwordInputOne}
+          name="input_password-one"
           placeholder="·········"
           handleInputChange={handleInputChange}
         />
+
+        {authWidgetType === "sign-up" && (
+          <Input
+            type="password"
+            value={passwordSignUpTwo}
+            name="input_password-two"
+            placeholder="·········"
+            handleInputChange={handleInputChange}
+          />
+        )}
 
         <Button
           text="Sign in"

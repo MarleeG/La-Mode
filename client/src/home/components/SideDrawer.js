@@ -37,7 +37,6 @@ const SideDrawer = (props) => {
         updateSideNavStyle({
           ...sideNavStyle,
           width: "0%",
-          width: "0%",
           animation: `shrinkWidth 0.5s`,
         });
       }
