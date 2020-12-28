@@ -1,4 +1,4 @@
-.button-home__homepage-btn {
+.button-home__homepage-btn, .auth__btn {
   width: 8vw;
   height: 6vh;
   margin: 5px;
@@ -13,10 +13,17 @@
   font-weight: 700;
 }
 
-.button-home__sign-up:active, .button-home__sign-in:active {
+.auth__btn{
+  width: 50%;
+  margin: 0px;
+  margin-top:25px;
+  float: left;
+  
+}
+
+.button-home__sign-up:active, .button-home__sign-in:active, .auth__btn:active {
   -ms-transform: translateY(2px);
   -webkit-transform: translateY(2px);
   transform: translateY(2px);
-
 }
 
