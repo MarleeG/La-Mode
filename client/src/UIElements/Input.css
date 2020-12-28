@@ -1,0 +1,17 @@
+input{
+    width: 100%;
+    margin-top: 20px;
+    border:none;
+    border-left: 4px solid grey;
+
+    border-radius: 3px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #fff;
+    filter: none;
+}
+
+input:focus{
+    outline: none;
+    border-left-color:rgb(211, 171, 158);
+}

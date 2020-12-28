@@ -10,9 +10,9 @@ const AuthenticationWidget = (props) => {
       </h3>
 
       <form>
-        <Input type="text" type="username" value="" />
+        <Input type="text" type="username" value="" placeholder="user@email.com" />
 
-        <Input type="password" type="password" value="" />
+        <Input type="password" type="password" value="" placeholder="·········"/>
       </form>
     </div>
   );

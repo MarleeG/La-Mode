@@ -1,5 +1,5 @@
 .AW-container {
-  border: 2px dotted black;
+  /* border: 2px dotted black;  */
   width: 40%;
   height: 55%;
 
@@ -13,4 +13,9 @@
 
 h3 {
   font-size: 25px;
+}
+
+form{
+  margin: auto;
+  width:70%;
 }
