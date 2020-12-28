@@ -4,13 +4,17 @@ import Input from "../../UIElements/Input";
 
 import "./authentication-widget.css";
 const AuthenticationWidget = (props) => {
+
+  const handleSubmit = e => {
+    e.preventDefault();
+  }
   return (
     <div className="AW-container center">
       <h3>
         <span>Sign in</span> or <span>Sign up</span>
       </h3>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <Input
           type="text"
           type="username"
@@ -19,7 +23,6 @@ const AuthenticationWidget = (props) => {
         />
 
         <Input
-          type="password"
           type="password"
           value=""
           placeholder="·········"
