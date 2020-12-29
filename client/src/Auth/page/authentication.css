@@ -21,4 +21,35 @@
 
 h2.auth__header{
     font-size: 40px;
+    color: #623b3c;
+}
+
+.auth_container__back-arrow{
+  padding: 10px;
+  font-size: 30px;
+  margin: 10px;
+  position: absolute;
+  opacity: .3;
+
+  color: #623b3c;
+
+}
+
+.auth_container__back-arrow:hover{
+  opacity: .8;
+  
+}
+
+a:link{
+  /* text-decoration: none; */
+
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
 }
