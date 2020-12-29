@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Backdrop from "../../UIElements/Backdrop";
 
-import "./home.css";
 import Button from "../../UIElements/button";
 import NavigationIcon from "../components/NavigationIcon";
 import SideDrawer from "../components/SideDrawer";
 
+import "./home.css";
+
+const log = console.log;
 const Home = () => {
   const [showNav, handleShowNav] = useState(false);
   const [openNavClickedOnce, updateOpenNavClickedOnce] = useState(false);
+
   return (
     <div className="home__container center">
       <div className="home__wrapper">
         <SideDrawer showNav={showNav} openNavClickedOnce={openNavClickedOnce} />
+
+        <Backdrop show={showNav ?true: false} />
 
         <div className="home__user-navigation-options">
           {/* <div className="home__nav">
