@@ -21,8 +21,6 @@ const Home = () => {
         <Backdrop show={showNav ?true: false} />
 
         <div className="home__user-navigation-options">
-          {/* <div className="home__nav">
-          </div> */}
 
           <NavigationIcon
             handleShowNav={handleShowNav}
